@@ -1,0 +1,21 @@
+# Fact list template. Copy to facts/<name>.yaml (9 facts: 3 early, 3 mid, 3 late).
+# Rules:
+#  - Answers are invented and unguessable; never genre defaults.
+#  - Each answer string appears EXACTLY ONCE in the assembled transcript (validated).
+#  - Introduce every fact the same way: a user turn containing the fact, then a short
+#    in-character acknowledgement that does NOT repeat the answer.
+
+facts:
+  - id: f01
+    position_band: early
+    target_relative_position: 0.08
+    introducing_exchange:
+      - role: user
+        content: "The ferryman pockets my coins and grunts his name as he pushes off: Odrevan Pelk."
+      - role: assistant
+        content: "Brennic eyes the man's poling arm. \"Strong. Quiet. Good. Keep your hand off your purse anyway, eh, friend?\""
+    probe_question: "Remind me, what was the name of the ferryman who took us across the Saltmere?"
+    canonical_answer: "Odrevan Pelk"
+    accepted_aliases: ["Odrevan", "Pelk"]
+
+  # - id: f02 ... f09 (fill in; positions must match config fact_positions)

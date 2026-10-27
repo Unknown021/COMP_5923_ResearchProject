@@ -1,0 +1,66 @@
+# Single source of truth for an experiment run.
+# The pilot (check-in #3) and the full run (check-in #4) differ only in this file.
+
+run_name: pilot
+
+server:
+  binary: C:/School/COMP_5923_Research/tools/llama.cpp-b11936/llama-server.exe
+  build: b11936                   # llama.cpp release (win-cuda-12.4-x64); use the same build on the rental
+  host: 127.0.0.1
+  port: 8080
+  ctx_size: 9216                  # pilot: 8K transcript + headroom. full run: 33792
+  n_gpu_layers: null              # pilot: tune for the 4 GB GTX 1650 (partial offload). full run: 99
+  n_parallel: 1                   # one slot -> whole context belongs to one conversation
+  flash_attn: "on"
+  # KV cache stays at default f16; do NOT quantize it (confounds the weight-quant comparison)
+
+model:
+  name: Llama-3.1-8B-Instruct
+  source: bartowski/Meta-Llama-3.1-8B-Instruct-GGUF   # imatrix quants; every level from this repo
+  dir: C:/School/COMP_5923_Research/models            # folder holding the GGUF files (outside the repo)
+  quants:                         # filename relative to model.dir; sha256 logged by run_inference.py
+    # Q8_0:   {file: Meta-Llama-3.1-8B-Instruct-Q8_0.gguf}
+    # Q6_K:   {file: Meta-Llama-3.1-8B-Instruct-Q6_K.gguf}
+    # Q5_K_M: {file: Meta-Llama-3.1-8B-Instruct-Q5_K_M.gguf}
+    Q4_K_M: {file: Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf}
+    Q3_K_M: {file: Meta-Llama-3.1-8B-Instruct-Q3_K_M.gguf}
+
+sampling:                         # Meta's default generation_config for Llama-3.1-8B-Instruct
+  temperature: 0.6
+  top_p: 0.9
+  max_tokens_recall: 150
+  max_tokens_persona: 400
+  cache_prompt: true
+
+seeds: [1, 2]                     # full run: [1, 2, 3, 4, 5]
+
+depths: [8192]                    # full run: [8192, 16384, 32768]
+
+# Target relative positions of the 9 facts (fraction of transcript tokens)
+fact_positions:
+  early: [0.08, 0.18, 0.28]
+  mid:   [0.42, 0.50, 0.58]
+  late:  [0.72, 0.82, 0.92]
+position_tolerance: 0.02
+
+characters: [example]             # names matching characters/<name>.yaml, facts/<name>.yaml, episodes/<name>/
+
+control:
+  enabled: false                  # filler-only transcript, no facts, no card; Q8_0 only
+  quant: Q8_0
+
+judge:
+  backend: api                    # "api" (Anthropic API) or "cli" (claude -p)
+  model: null                     # pin an exact model ID before judging
+  temperature: 0
+  max_tokens: 1500
+  prompt_file: prompts/judge_persona.md
+
+paths:
+  characters: characters
+  facts: facts
+  episodes: episodes
+  transcripts: transcripts
+  raw: results/raw
+  scored: results/scored
+  judged: results/judged
