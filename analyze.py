@@ -1,6 +1,7 @@
 """Summary tables from scored recall and judged persona results.
 
-Recall:  accuracy per (quant, depth, condition, position band) with Wilson 95% CIs.
+Recall:  accuracy per (quant, depth, condition, position band) with Wilson 95% CIs;
+         unresolved trials (flagged, not yet adjudicated or overridden) are excluded.
 Persona: mean score per criterion and overall per (quant, depth); repeat judgments excluded.
 Judge:   self-consistency on repeated items, when there are any.
 
@@ -21,6 +22,7 @@ CRITERIA = ["knowledge", "speech", "traits", "hallucination"]
 
 
 def recall_summary(scored):
+    scored = scored[scored["correct"].notna()].astype({"correct": bool})
     g = scored.groupby(["quant", "depth", "condition", "position_band"])["correct"]
     table = g.agg(n="count", correct="sum").reset_index()
     table["accuracy"] = table["correct"] / table["n"]
@@ -35,6 +37,14 @@ def persona_summary(judged):
     table = first.groupby(["quant", "depth"])[cols].mean().round(2)
     table.insert(0, "n", first.groupby(["quant", "depth"]).size())
     return table.reset_index()
+
+
+def adjudicator_agreement(scored):
+    """Agreement between the recall adjudicator and human overrides on the same trials."""
+    both = scored[scored["adjudicator_correct"].notna() & scored["override_correct"].notna()]
+    if both.empty:
+        return None
+    return (both["adjudicator_correct"] == both["override_correct"]).mean(), len(both)
 
 
 def judge_consistency(judged):
@@ -56,7 +66,13 @@ def main():
     scored = pd.DataFrame(read_jsonl(f"{cfg['paths']['scored']}/{run}.jsonl"))
     recall = recall_summary(scored)
     print(f"Recall accuracy ({run})\n{recall.to_string(index=False, float_format='%.2f')}\n")
-    print(f"Awaiting manual review: {int(scored['needs_review'].sum())} of {len(scored)}\n")
+    sources = scored["score_source"].value_counts().to_dict()
+    print("Score sources: " + ", ".join(f"{k}={v}" for k, v in sources.items()))
+    if sources.get("unresolved"):
+        print(f"WARNING: {sources['unresolved']} unresolved trials excluded from the table above")
+    if (agreement := adjudicator_agreement(scored)) is not None:
+        print(f"Adjudicator vs. human: {agreement[0]:.0%} agreement on {agreement[1]} trials")
+    print()
     recall.to_csv(ROOT / "results" / f"{run}_recall_summary.csv", index=False)
 
     judged = pd.DataFrame(read_jsonl(f"{cfg['paths']['judged']}/{run}.jsonl"))
