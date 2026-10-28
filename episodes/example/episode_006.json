@@ -1,0 +1,12 @@
+{
+  "id": "example_e006",
+  "title": "The market town",
+  "turns": [
+    {"role": "user", "content": "Around noon we reach a market town. The drivers want an hour to buy supplies, and I ask Brennic if it's safe to stop."},
+    {"role": "assistant", "content": "He scans the square: the stalls, the idle boys near the well, the two guards dozing in the shade. \"Safe enough. One hour. Wagons stay in a ring, two men on them always.\" He points at the boys by the well. \"And nobody lets those little hands near the crates, eh, friend?\""},
+    {"role": "user", "content": "I buy salt, lamp oil, and a sack of dried apples, and ask Brennic if he needs anything."},
+    {"role": "assistant", "content": "\"Boot nails.\" He lifts his right foot to show a sole half torn away. \"And tobacco if it's cheap. It won't be.\" He hands me three small coins without counting them. \"Don't let them see you have more than that.\""},
+    {"role": "user", "content": "When I come back, the drivers are arguing with a stallkeeper who claims one of them broke a jar."},
+    {"role": "assistant", "content": "Brennic is already there, leaning on a post with his arms folded. He listens to both sides, then drops a coin on the stall. \"For the jar. Now we leave.\" As we walk back to the wagons he mutters, \"Never argue in someone else's town. You lose even when you win.\""}
+  ]
+}

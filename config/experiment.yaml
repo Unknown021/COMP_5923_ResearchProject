@@ -1,7 +1,7 @@
 # Single source of truth for an experiment run.
 # The pilot (check-in #3) and the full run (check-in #4) differ only in this file.
 
-run_name: pilot
+run_name: demo
 
 server:
   binary: C:/School/COMP_5923_Research/tools/llama.cpp-b11936/llama-server.exe
@@ -34,26 +34,24 @@ sampling:                         # Meta's default generation_config for Llama-3
 
 seeds: [1, 2]                     # full run: [1, 2, 3, 4, 5]
 
-depths: [8192]                    # full run: [8192, 16384, 32768]
+depths: [1536]                    # demo. full run: [8192, 16384, 32768]
 
-# Target relative positions of the 9 facts (fraction of transcript tokens)
-fact_positions:
-  early: [0.08, 0.18, 0.28]
-  mid:   [0.42, 0.50, 0.58]
-  late:  [0.72, 0.82, 0.92]
-position_tolerance: 0.02
+# Fact target positions live in facts/<name>.yaml. Allowed gap between target and actual
+# relative position; facts are inserted between exchanges, so the gap shrinks as depth grows.
+position_tolerance: 0.06          # demo (~80-token exchanges at 1.5K). full run: 0.02
 
 characters: [example]             # names matching characters/<name>.yaml, facts/<name>.yaml, episodes/<name>/
 
 control:
-  enabled: false                  # filler-only transcript, no facts, no card; Q8_0 only
-  quant: Q8_0
+  enabled: true                   # filler-only transcript, no facts, no card; recall probes only
+  quant: Q4_K_M                   # demo. full run: Q8_0
 
 judge:
-  backend: api                    # "api" (Anthropic API) or "cli" (claude -p)
-  model: null                     # pin an exact model ID before judging
-  temperature: 0
-  max_tokens: 1500
+  backend: cli                    # "cli" (claude -p, Claude Code login) or "api" (Anthropic API key)
+  model: claude-opus-5-5          # pinned model ID; current models accept no temperature setting
+  effort: medium
+  shuffle_seed: 0                 # order items are judged in
+  repeat_fraction: 0.0            # share of items re-judged for self-consistency (full run: 0.10)
   prompt_file: prompts/judge_persona.md
 
 paths:

@@ -19,10 +19,10 @@ common.py                config loading, I/O, llama-server client
 ## Pipeline
 
 ```
-python build_transcripts.py   # needs llama-server running (tokenizer)
+python build_transcripts.py   # starts llama-server briefly for the model's tokenizer
 python run_inference.py       # starts/stops llama-server per quant
-python score_recall.py
-python judge_persona.py       # needs ANTHROPIC_API_KEY (or judge.backend: cli)
+python score_recall.py        # manual decisions: results/scored/<run>.overrides.yaml
+python judge_persona.py       # judge.backend cli: claude -p (Claude Code login); api: ANTHROPIC_API_KEY
 python analyze.py
 ```
 

@@ -1,14 +1,17 @@
-# Fact list template. Copy to facts/<name>.yaml (9 facts: 3 early, 3 mid, 3 late).
+# Fact list template. Copy to facts/<name>.yaml (full study: 9 facts, 3 early, 3 mid, 3 late).
+# This example has one fact per band for the end-to-end demo.
 # Rules:
 #  - Answers are invented and unguessable; never genre defaults.
 #  - Each answer string appears EXACTLY ONCE in the assembled transcript (validated).
 #  - Introduce every fact the same way: a user turn containing the fact, then a short
 #    in-character acknowledgement that does NOT repeat the answer.
+#  - Aliases are other spellings that count as correct; each must be specific enough
+#    that matching it means the fact was recalled.
 
 facts:
   - id: f01
     position_band: early
-    target_relative_position: 0.08
+    target_relative_position: 0.15
     introducing_exchange:
       - role: user
         content: "The ferryman pockets my coins and grunts his name as he pushes off: Odrevan Pelk."
@@ -18,4 +21,26 @@ facts:
     canonical_answer: "Odrevan Pelk"
     accepted_aliases: ["Odrevan", "Pelk"]
 
-  # - id: f02 ... f09 (fill in; positions must match config fact_positions)
+  - id: f02
+    position_band: mid
+    target_relative_position: 0.50
+    introducing_exchange:
+      - role: user
+        content: "I unfold the merchant's contract and read the terms aloud. The caravan has to reach Kesh Varran by the 14th of Harrowmoot, or we forfeit half our pay."
+      - role: assistant
+        content: "Brennic snorts. \"Merchants. Always a knife hidden in the ink. We'll make it. Probably.\""
+    probe_question: "What date did the merchant's contract say we have to reach Kesh Varran by?"
+    canonical_answer: "14th of Harrowmoot"
+    accepted_aliases: ["14 Harrowmoot", "Harrowmoot 14", "fourteenth of Harrowmoot", "Harrowmoot 14th"]
+
+  - id: f03
+    position_band: late
+    target_relative_position: 0.85
+    introducing_exchange:
+      - role: user
+        content: "The gate warden leans close and whispers that tonight's password for the eastern gate is Thistlewick."
+      - role: assistant
+        content: "Brennic nods once and taps his temple. \"Got it. Don't say it twice where walls can hear, eh, friend?\""
+    probe_question: "We need to get through the eastern gate tonight. What was the password the warden gave us?"
+    canonical_answer: "Thistlewick"
+    accepted_aliases: []

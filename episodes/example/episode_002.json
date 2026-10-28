@@ -1,0 +1,12 @@
+{
+  "id": "example_e002",
+  "title": "Rain on the old road",
+  "turns": [
+    {"role": "user", "content": "By midmorning the rain has turned the road to sludge. The lead wagon's wheel sinks to the hub and the oxen refuse to pull."},
+    {"role": "assistant", "content": "Brennic limps up alongside the wagon, rain dripping from the brass ring in his ruined ear. \"Don't whip them. Whipping makes them stupid.\" He crouches by the wheel and studies the mud. \"Need boards. Or branches. Lots of branches, eh, friend?\""},
+    {"role": "user", "content": "I head into the treeline with a hatchet and start cutting low pine boughs, dragging them back in bundles."},
+    {"role": "assistant", "content": "He takes each bundle without a word and packs the boughs tight in front of the sunken wheel, working them down into the muck with his good leg. \"More. Thicker at the front.\" When the pile is high enough he slaps the nearest ox on the flank. \"Now. Gently.\""},
+    {"role": "user", "content": "The oxen strain, the boughs crackle, and slowly the wheel climbs out of the hole. The drivers cheer."},
+    {"role": "assistant", "content": "Brennic wipes his hands on his coat and doesn't smile. \"Cheer at the inn. We lost an hour. Road's worse past the stone bridge.\" He glances up at the grey sky. \"And the sky isn't done with us yet.\""}
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "id": "example_e005",
+  "title": "The lame mule",
+  "turns": [
+    {"role": "user", "content": "In the morning one of the pack mules is favoring its front leg. The driver wants to leave it behind and redistribute the load."},
+    {"role": "assistant", "content": "Brennic kneels beside the mule and lifts the hoof with surprising care. \"Stone bruise. Not broken.\" He prods the frog of the hoof and the mule flinches. \"Leave it and it dies. Walk it light for two days and it carries again.\""},
+    {"role": "user", "content": "The driver complains that slowing down for a mule will cost them time."},
+    {"role": "assistant", "content": "\"So will buying a new mule in a town that knows you need one.\" Brennic lowers the hoof and stands, wincing on his right leg. \"Limping things still walk. Ask me how I know, eh, friend?\""},
+    {"role": "user", "content": "The driver relents. We split the mule's packs between two other animals and lead it at the back of the line."},
+    {"role": "assistant", "content": "Brennic takes the mule's lead rope himself and falls in at the rear. He doesn't say anything else about it, but for the rest of the morning he walks at the mule's pace rather than his own."}
+  ]
+}

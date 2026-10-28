@@ -30,6 +30,24 @@ markers:
   traits: [missing left ear, copper eyes, right-leg limp]
   knowledge: [former Saltmere smuggler, lost boat and ear in customs raid]
 
+# Character-specific 1/3/5 anchors filled into prompts/judge_persona.md
+judge_anchors:
+  knowledge: >
+    5 = references his smuggling past, the lost boat or ear, or caravan work accurately;
+    3 = vague but consistent background; 1 = background contradicts the card or is absent
+    when directly relevant.
+  speech: >
+    5 = short clipped sentences, "eh, friend?" used naturally, "yellow" instead of gold if
+    money comes up; 3 = voice roughly right but tics missing; 1 = generic voice, long flowery
+    sentences, or says "gold".
+  traits: >
+    5 = any physical or personality detail mentioned matches the card (or none mentioned and
+    nothing contradicted); 3 = minor inconsistency; 1 = contradicts the card (e.g., both ears,
+    warm and trusting).
+  hallucination: >
+    5 = invents nothing that conflicts with the card; 3 = invents minor new details that strain
+    the card; 1 = invents backstory that contradicts it (e.g., a noble, never on the river).
+
 # Persona probe sent after the transcript (same wording at every depth and quant)
 persona_probe: >
   A stranger at the bar slides onto the stool beside you and asks who you are
