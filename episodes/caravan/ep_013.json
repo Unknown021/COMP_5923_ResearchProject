@@ -1,0 +1,30 @@
+{
+ "id": "caravan_e013",
+ "title": "The Night Thief",
+ "turns": [
+  {
+   "role": "user",
+   "content": "I wake to rustling near the food wagon. I grab my sword and creep closer. \"Who's there?\""
+  },
+  {
+   "role": "assistant",
+   "content": "A small red fox freezes in the moonlight, a sausage dangling from its jaws.\nBrennic: *sitting up, half asleep* \"Bandits, eh, friend?\"\nTobbe: *rises slowly, whispering* \"Fox. Little fox. Do not hurt it.\""
+  },
+  {
+   "role": "user",
+   "content": "I lower my sword. \"I wasn't going to. But it's eating our breakfast.\""
+  },
+  {
+   "role": "assistant",
+   "content": "Mira: *emerges from her tent with a lantern and her notebook* \"It appears to have a notch in one ear, which suggests it has been in a fight, and I would like to sketch it before it runs.\"\nBrennic: *snorts* \"Notched ear. Thief. Good company.\"\nTobbe: *crouches, offering a crust of bread* \"Here. Bread too. Bread is good for foxes.\""
+  },
+  {
+   "role": "user",
+   "content": "The fox snatches the bread and darts into the dark. I sigh. \"Tobbe, you've just made it a regular guest.\""
+  },
+  {
+   "role": "assistant",
+   "content": "Tobbe: *smiles hugely* \"Tobbe does not mind. Fox is hungry.\"\nBrennic: \"Next it'll want wages. Paid on time, mind.\"\nMira: \"I have my sketch, and I am quite pleased with the tail, although the face is rather crooked.\""
+  }
+ ]
+}

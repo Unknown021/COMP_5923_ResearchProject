@@ -2,11 +2,12 @@
 
 Filler episodes are flattened into exchanges (a user turn and the assistant reply). Exchanges
 are added in order until the next one would exceed the depth budget; each fact exchange is
-inserted at the exchange boundary nearest its target position. Depth and positions
-are measured in tokens of the prompt as the model sees it: chat template + system card +
-transcript, excluding the probe.
+inserted at the exchange boundary nearest its target position. Depth is measured in tokens
+of the prompt as the model sees it (chat template + system prompt + transcript, excluding the
+probe). Fact positions are fractions of the conversation only, so the system prompt's length
+does not shift them; absolute token offsets are recorded too.
 
-Output per (character, depth):
+Output per (scenario, depth):
   transcripts/<name>_<depth>.json          {"messages": [...]} (no system message)
   transcripts/<name>_<depth>.manifest.json total tokens + each fact's actual offset
   transcripts/<name>_<depth>_control.json  filler only, no facts (when control.enabled)
@@ -20,7 +21,7 @@ import re
 from datetime import datetime
 from pathlib import Path
 
-from common import ROOT, LlamaServer, load_config, load_yaml, render_card, start_server, stop_server
+from common import ROOT, LlamaServer, load_config, load_scenario, load_yaml, render_scene, start_server, stop_server
 
 # Template tokens around one message in the Llama 3 chat format (header + role + eot)
 MESSAGE_OVERHEAD = 5
@@ -55,12 +56,17 @@ def estimate_tokens(server, exchange):
 def assemble(server, system, exchanges, facts, depth):
     """Fill exchanges up to `depth` tokens, inserting facts at their targets. Returns (messages, inserted fact ids)."""
     pending = sorted(facts, key=lambda f: f["target_relative_position"])
-    current = server.count_chat_tokens(system)
+    system_tokens = server.count_chat_tokens(system)
+    current = system_tokens
     messages, placed = [], []
+
+    def target(fact):
+        return system_tokens + fact["target_relative_position"] * (depth - system_tokens)
+
     for exchange in exchanges:
         cost = estimate_tokens(server, exchange)
         # Insert at whichever boundary (before or after this exchange) is nearer the target
-        while pending and pending[0]["target_relative_position"] * depth < current + cost / 2:
+        while pending and target(pending[0]) < current + cost / 2:
             fact = pending.pop(0)
             placed.append((fact["id"], len(messages)))
             messages += fact["introducing_exchange"]
@@ -77,14 +83,18 @@ def assemble(server, system, exchanges, facts, depth):
 
 
 def measure(server, system, messages, placed):
-    """Exact token offsets: template the prefix before each fact's first turn and count it."""
+    """Exact token offsets: template the prefix before each fact's first turn and count it.
+
+    relative_position is measured over the conversation only (system prompt excluded).
+    """
+    system_tokens = server.count_chat_tokens(system)
     total = server.count_chat_tokens(system + messages)
     facts = {}
     for fact_id, index in placed:
         offset = server.count_chat_tokens(system + messages[:index])
         facts[fact_id] = {"message_index": index, "token_offset": offset,
-                          "relative_position": round(offset / total, 4)}
-    return {"total_tokens": total, "facts": facts}
+                          "relative_position": round((offset - system_tokens) / (total - system_tokens), 4)}
+    return {"total_tokens": total, "system_tokens": system_tokens, "facts": facts}
 
 
 def count_term(messages, term):
@@ -136,11 +146,11 @@ def main():
     out_dir.mkdir(parents=True, exist_ok=True)
     failed = False
     try:
-        for name in cfg["characters"]:
-            card = load_yaml(f"{cfg['paths']['characters']}/{name}.yaml")
+        for name in cfg["scenarios"]:
+            scenario = load_scenario(cfg, name)
             facts = load_yaml(f"{cfg['paths']['facts']}/{name}.yaml")["facts"]
             exchanges = to_exchanges(load_episodes(cfg, name))
-            system = [{"role": "system", "content": render_card(card)}]
+            system = [{"role": "system", "content": render_scene(scenario)}]
 
             for depth in cfg["depths"]:
                 variants = [("main", system, facts)]
@@ -154,7 +164,7 @@ def main():
 
                     stem = f"{name}_{depth}" + ("_control" if condition == "control" else "")
                     write_json(out_dir / f"{stem}.json",
-                               {"character": name, "depth": depth, "condition": condition, "messages": messages})
+                               {"scenario": name, "depth": depth, "condition": condition, "messages": messages})
                     write_json(out_dir / f"{stem}.manifest.json",
                                {**manifest, "validation_errors": errors})
 

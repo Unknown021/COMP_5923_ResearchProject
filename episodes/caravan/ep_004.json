@@ -1,0 +1,30 @@
+{
+ "id": "caravan_e004",
+ "title": "The Limping Mule",
+ "turns": [
+  {
+   "role": "user",
+   "content": "Midmorning, the grey mule starts favouring her back leg. I call a halt. \"Something's wrong with her. Tobbe?\""
+  },
+  {
+   "role": "assistant",
+   "content": "Tobbe: *kneels beside the mule, lifting her hoof with enormous care* \"Shh, shh. Tobbe is here.\" *peers closely* \"Stone. Stuck deep.\"\nBrennic: *leans on the wagon wheel* \"Limping mule. Limping guide. We're a matched pair now.\"\nMira: \"I have a small pick in my instrument case, which I use for cleaning ink from the gears of my compass, and I believe it would work.\""
+  },
+  {
+   "role": "user",
+   "content": "I take the pick from Mira and hand it to Tobbe. \"You've got the steadiest hands here. Go easy.\""
+  },
+  {
+   "role": "assistant",
+   "content": "Tobbe: *works slowly, humming tunelessly to calm the animal* \"Almost. Almost.\" *the stone pops free* \"There. Good girl.\"\nMira: *picks up the stone and examines it* \"This is river flint, which is strange, because there is no river marked within four miles in Halvard's Atlas.\"\nBrennic: \"Maybe Halvard missed one. Wouldn't be the first time, eh, friend?\""
+  },
+  {
+   "role": "user",
+   "content": "I scratch the mule behind her ears. \"Can she walk?\""
+  },
+  {
+   "role": "assistant",
+   "content": "Tobbe: \"She walks slow today. Tobbe walks with her.\"\nBrennic: \"Then we all walk slow. Fine by me. My leg thanks her.\"\nMira: *pockets the flint and pushes up her spectacles* \"I am going to find that river, if it exists, and I will be very pleased with myself if I do.\""
+  }
+ ]
+}

@@ -11,6 +11,8 @@ server:
   ctx_size: 9216                  # pilot: 8K transcript + headroom. full run: 33792
   n_gpu_layers: null              # pilot: tune for the 4 GB GTX 1650 (partial offload). full run: 99
   n_parallel: 1                   # one slot -> whole context belongs to one conversation
+  cache_ram_mib: 0                # host-RAM prompt cache (llama.cpp default 8192); the slot already
+                                  # reuses the shared prefix, so it is off to save system memory
   flash_attn: "on"
   # KV cache stays at default f16; do NOT quantize it (confounds the weight-quant comparison)
 
@@ -34,13 +36,14 @@ sampling:                         # Meta's default generation_config for Llama-3
 
 seeds: [1, 2]                     # full run: [1, 2, 3, 4, 5]
 
-depths: [1536]                    # demo. full run: [8192, 16384, 32768]
+depths: [4096]                    # demo. full run: [8192, 16384, 32768]
 
-# Fact target positions live in facts/<name>.yaml. Allowed gap between target and actual
-# relative position; facts are inserted between exchanges, so the gap shrinks as depth grows.
-position_tolerance: 0.06          # demo (~80-token exchanges at 1.5K). full run: 0.02
+# Fact target positions live in facts/<scenario>.yaml, as fractions of the conversation
+# (system prompt excluded). Allowed gap between target and actual position; facts are
+# inserted between exchanges, so the gap shrinks as depth grows.
+position_tolerance: 0.06          # demo (~150-token exchanges at 4K). full run: 0.02
 
-characters: [example]             # names matching characters/<name>.yaml, facts/<name>.yaml, episodes/<name>/
+scenarios: [caravan]              # scenarios/<id>.yaml, facts/<id>.yaml, episodes/<id>/
 
 control:
   enabled: true                   # filler-only transcript, no facts, no card; recall probes only
@@ -54,7 +57,13 @@ judge:
   repeat_fraction: 0.0            # share of items re-judged for self-consistency (full run: 0.10)
   prompt_file: prompts/judge_persona.md
 
+generator:                        # generate_episodes.py (filler drafting)
+  backend: cli
+  model: claude-opus-5-5
+  effort: medium
+
 paths:
+  scenarios: scenarios
   characters: characters
   facts: facts
   episodes: episodes

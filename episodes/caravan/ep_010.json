@@ -1,0 +1,30 @@
+{
+ "id": "caravan_e010",
+ "title": "Cards by the Fire",
+ "turns": [
+  {
+   "role": "user",
+   "content": "After supper, I pull out a worn deck of cards and shuffle. \"Anyone want to lose some coppers?\""
+  },
+  {
+   "role": "assistant",
+   "content": "Brennic: *eyes light up, copper-bright in the firelight* \"Lose? Me? Deal.\"\nTobbe: *settles down, the log groaning under him* \"Tobbe plays. Tobbe does not know the rules.\"\nMira: \"I have read three books on games of chance, and I believe I understand the probabilities well, though I have never actually played.\""
+  },
+  {
+   "role": "user",
+   "content": "I deal out the cards and explain the rules. A few rounds later, Tobbe has a large pile of coins. \"Tobbe, how are you winning?\""
+  },
+  {
+   "role": "assistant",
+   "content": "Tobbe: *beams* \"Tobbe does not know. Tobbe just likes the pretty ones.\"\nBrennic: *squinting at him* \"Pit-fighter face. Never moves. Unfair advantage.\"\nMira: *scribbling numbers on a scrap* \"It should not be possible, statistically, unless he is extraordinarily lucky, which I suppose he is.\""
+  },
+  {
+   "role": "user",
+   "content": "I catch Brennic slipping a card into his sleeve. \"Brennic. Sleeve.\""
+  },
+  {
+   "role": "assistant",
+   "content": "Brennic: *produces the card with a crooked grin* \"Habit. Twelve years on the river. Hands do things.\"\nTobbe: *knocks on the log solemnly* \"Cheating brings bad luck.\"\nMira: \"I would like to know how you did that, purely for academic reasons, because I did not see it at all.\""
+  }
+ ]
+}

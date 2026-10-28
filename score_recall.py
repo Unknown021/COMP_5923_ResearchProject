@@ -10,7 +10,7 @@
 4. Human decisions in results/scored/<run_name>.overrides.yaml take precedence. Entries for
    adjudicated trials double as the validation sample for the adjudicator:
 
-       "Q3_K_M|example|1536|main|1|f03": {correct: false, note: "asserted Clover"}
+       "Q3_K_M|caravan|4096|main|1|f11": {correct: false, note: "asserted Clover"}
 
 A flagged trial with no adjudication and no override has correct = null and is excluded
 from analysis.
@@ -104,15 +104,15 @@ def main():
     with open(ROOT / "prompts" / "judge_recall.md", encoding="utf-8") as f:
         template = f.read()
 
-    facts_by_char = {}
+    facts_by_scenario = {}
     records = []
     for trial in read_jsonl(f"{cfg['paths']['raw']}/{run}.jsonl"):
         if trial["probe_type"] != "recall":
             continue
-        name = trial["character"]
-        if name not in facts_by_char:
-            facts_by_char[name] = {x["id"]: x for x in load_yaml(f"{cfg['paths']['facts']}/{name}.yaml")["facts"]}
-        facts = facts_by_char[name]
+        name = trial["scenario"]
+        if name not in facts_by_scenario:
+            facts_by_scenario[name] = {x["id"]: x for x in load_yaml(f"{cfg['paths']['facts']}/{name}.yaml")["facts"]}
+        facts = facts_by_scenario[name]
         fact = facts[trial["probe_id"]]
         others = [x for x in facts.values() if x["id"] != fact["id"]]
 

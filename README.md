@@ -7,18 +7,21 @@ stay in character at different context depths in a roleplay setting?
 
 ```
 config/experiment.yaml   quants, depths, seeds, sampler params, server build (one file per run)
-characters/<name>.yaml   character cards (system prompt) + persona probe
-facts/<name>.yaml        9 facts per character with probes, answers, aliases
-episodes/<name>/*.json   Claude-generated filler episodes
-prompts/                 judge prompt and episode-generation prompt (paper appendix)
+scenarios/<id>.yaml      a shared story: setting + the characters the model voices together
+characters/<id>.yaml     character cards (system prompt), judge anchors, persona probe
+facts/<scenario>.yaml    15 facts per scenario with probes, answers, aliases
+episodes/<scenario>/     Claude-generated multi-character filler episodes + generation log
+prompts/                 judge, adjudicator and episode-generation prompts (paper appendix)
 transcripts/             assembled transcripts + fact-offset manifests
 results/raw|scored|judged  JSONL, one line per trial
+claude_judge.py          shared claude -p / API call for judging and generation
 common.py                config loading, I/O, llama-server client
 ```
 
 ## Pipeline
 
 ```
+python generate_episodes.py --scenario caravan   # drafts filler with Claude; review before use
 python build_transcripts.py   # starts llama-server briefly for the model's tokenizer
 python run_inference.py       # starts/stops llama-server per quant
 python score_recall.py        # manual decisions: results/scored/<run>.overrides.yaml

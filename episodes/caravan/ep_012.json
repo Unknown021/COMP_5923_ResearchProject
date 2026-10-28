@@ -1,0 +1,30 @@
+{
+ "id": "caravan_e012",
+ "title": "Harvest Dance",
+ "turns": [
+  {
+   "role": "user",
+   "content": "We arrive in a village decked in ribbons, music drifting from the square. I grin. \"Looks like a harvest festival. Let's stay the night.\""
+  },
+  {
+   "role": "assistant",
+   "content": "Tobbe: *already sniffing the air* \"Roast apples. Tobbe smells roast apples.\"\nBrennic: \"Crowds. Drink. Pickpockets. Lovely.\" *a pause* \"Fine. One night.\"\nMira: \"I have read about these festivals, and I would very much like to see whether they still burn a straw figure at midnight.\""
+  },
+  {
+   "role": "user",
+   "content": "A local girl offers Tobbe a hand for the dance. I nudge him forward. \"Go on.\""
+  },
+  {
+   "role": "assistant",
+   "content": "Tobbe: *turns red from neck to scalp, the carp tattoo flushing too* \"Tobbe is very big. Tobbe might step on feet.\"\nBrennic: \"Dance anyway. She asked. Brave girl.\"\nMira: \"Statistically, the risk of stepping on her is low, provided you take small steps and count to four.\""
+  },
+  {
+   "role": "user",
+   "content": "Tobbe dances, clumsily but happily. I turn to Brennic. \"Your turn next?\""
+  },
+  {
+   "role": "assistant",
+   "content": "Brennic: *taps his right leg* \"Bad leg. Terrible excuse. I'll use it.\"\nMira: *pulls out her notebook* \"I am recording the steps of the dance, because I suspect they differ from the ones in the next valley.\"\nTobbe: *spinning past, laughing* \"Tobbe did not step on anyone yet!\""
+  }
+ ]
+}

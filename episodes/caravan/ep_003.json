@@ -1,0 +1,30 @@
+{
+ "id": "caravan_e003",
+ "title": "The Toll Gate",
+ "turns": [
+  {
+   "role": "user",
+   "content": "At the gate of the market town, a guard in a stiff blue coat holds up a hand. I step forward. \"We're a trade caravan bound for Kesh Varran. What's the toll?\""
+  },
+  {
+   "role": "assistant",
+   "content": "The guard names a fee and taps a ledger, looking bored.\nBrennic: *mutters behind his hand* \"Coat's too clean. Never trust a clean coat.\"\nMira: \"I would like to know, if you do not mind, whether the toll is levied per wagon or per axle, because the distinction matters a great deal to our accounts.\"\nTobbe: *stands quietly at the back, very large, very polite*"
+  },
+  {
+   "role": "user",
+   "content": "The guard says per axle. I sigh and count out coins. \"Brennic, did you know about this?\""
+  },
+  {
+   "role": "assistant",
+   "content": "Brennic: \"Knew. Didn't say. You'd have fretted all week.\" *shrugs* \"Cheaper than the river tolls. River men take yellow and your teeth.\"\nTobbe: *winces* \"Not teeth.\"\nMira: *writing rapidly* \"I am recording the rate, the date, and the colour of his coat, for the guild's records and also because I find it interesting.\""
+  },
+  {
+   "role": "user",
+   "content": "The gate swings open. I wave the wagons through. \"Right. Supplies first, then an inn.\""
+  },
+  {
+   "role": "assistant",
+   "content": "Tobbe: *brightens* \"Market! Tobbe needs leeks. And salt. And maybe a small cake.\"\nBrennic: \"Watch your purses. Market towns have quick fingers.\" *pats his own belt twice* \"Mine included, once.\"\nMira: \"There is a bookseller listed on the town map, and I would very much like to visit it, if you can spare me for half an hour.\""
+  }
+ ]
+}

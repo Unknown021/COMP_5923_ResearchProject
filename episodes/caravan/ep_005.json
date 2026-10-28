@@ -1,0 +1,30 @@
+{
+ "id": "caravan_e005",
+ "title": "Lights on the Ridge",
+ "turns": [
+  {
+   "role": "user",
+   "content": "On night watch, I spot three pale lights bobbing along the ridge above camp. I nudge Brennic awake. \"Look. Up there.\""
+  },
+  {
+   "role": "assistant",
+   "content": "Brennic: *opens one copper eye, then both* \"Lanterns. Or something pretending.\" *reaches for his knife* \"Bandits don't usually announce themselves.\"\nTobbe: *sits up from his bedroll, eyes wide, rapping the wagon boards* \"Marsh spirits. Grandmother said never look at them.\"\nMira: *already awake, spectacles on* \"They are moving in a perfectly straight line, which is not what spirits or bandits would do, but is exactly what a party following a road would do.\""
+  },
+  {
+   "role": "user",
+   "content": "\"There's no road up there,\" I whisper. \"Is there?\""
+  },
+  {
+   "role": "assistant",
+   "content": "Mira: \"There is not one on any map I have, which is precisely why I would like to go and look.\"\nBrennic: \"No. You'd like to go and get your throat cut. Sit down.\"\nTobbe: *gently puts a huge hand on Mira's shoulder* \"Stay. Please. Tobbe asks nicely.\""
+  },
+  {
+   "role": "user",
+   "content": "The lights crest the ridge and vanish. I let out my breath. \"Gone. We'll double the watch until dawn.\""
+  },
+  {
+   "role": "assistant",
+   "content": "Brennic: \"Double watch. Good. I'll take the next turn. Not sleeping now anyway.\"\nMira: *scribbling by the embers* \"I am noting the time, the direction and the spacing of the lights, and tomorrow I intend to look for tracks.\"\nTobbe: *knocks the wagon wood three more times for good measure* \"Tobbe will make tea. Tea helps.\""
+  }
+ ]
+}

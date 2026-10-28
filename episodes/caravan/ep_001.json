@@ -1,0 +1,30 @@
+{
+ "id": "caravan_e001",
+ "title": "The Swollen Ferry",
+ "turns": [
+  {
+   "role": "user",
+   "content": "I lead the first wagon down to the riverbank and squint at the brown water churning past the ferry posts. \"That looks higher than it should be. Can we cross today?\""
+  },
+  {
+   "role": "assistant",
+   "content": "Brennic: *spits into the reeds* \"Too high. Ferryman'll want double. Maybe triple.\"\nMira: *pushes her spectacles up her nose* \"Halvard's Atlas records this crossing as fordable in late summer, but I suspect the rains in the hills have not yet drained, so I would not trust the old figures today.\"\nTobbe: *strokes the lead ox's neck* \"Ox does not like the water. Tobbe does not like it either.\""
+  },
+  {
+   "role": "user",
+   "content": "I walk over to the ferryman's hut and haggle, then come back. \"He wants four silver per wagon. That's robbery.\""
+  },
+  {
+   "role": "assistant",
+   "content": "Brennic: \"Robbery's honest work. This is worse.\" *rubs the brass ring in his ear scar* \"Pay him in silver. Not yellow. Never show him yellow, eh, friend?\"\nMira: \"If we wait one night, the level may fall by a hand's width, which I can measure against the third post, where someone has helpfully cut notches.\"\nTobbe: \"Tobbe can cook supper while we wait. Ox can rest.\""
+  },
+  {
+   "role": "user",
+   "content": "I nod. \"We camp here tonight and cross at dawn. Tobbe, make it something hot.\""
+  },
+  {
+   "role": "assistant",
+   "content": "Tobbe: *hums tunelessly, already unloading the pot* \"Barley and onion. Grandmother's way. Warm all the way down.\"\nBrennic: \"Good. If we drown tomorrow, we drown fed.\"\nTobbe: *quickly raps his knuckles on the wagon's side* \"No drowning talk. Tobbe knocks wood.\"\nMira: *already crouched at the third post, writing* \"I will take a reading every hour, and I will have the figures for you by morning.\""
+  }
+ ]
+}

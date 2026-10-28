@@ -1,27 +1,31 @@
-Prompt used with Claude to generate filler episodes. Keep this file versioned:
-it goes in the paper's appendix.
+You are writing filler scenes for a roleplay transcript used in a research study on how
+well language models remember facts and stay in character over long conversations.
 
----
+The story:
+{setting}
 
-You are writing filler scenes for a roleplay transcript used in a research study.
+The model under test voices all of these characters at once:
 
-The model's character is defined by this card:
+{character_profiles}
 
-<character_card>
-{character_card}
-</character_card>
+Write {n_episodes} self-contained scene episodes from this journey, like an episodic
+tabletop session log. Each episode is roughly {tokens_per_episode} tokens long and has
+3 to 5 exchanges. An exchange is one user turn followed by one assistant turn.
 
-Write {n_episodes} self-contained scene episodes from a single overland journey,
-like an episodic D&D session log. Each episode is roughly {tokens_per_episode}
-tokens and alternates user turns (the player, describing actions in second
-person) and assistant turns (the character, in their voice as defined above).
+User turns: the player's character, a hired guard, describes what they do and say, in
+the first person ("I climb onto the wagon..."). Never write for the named characters here.
+
+Assistant turns: the named characters react. Put each character's speech and actions on
+its own line, starting with their first name and a colon, for example:
+{format_example}
+Narration that belongs to no character goes on its own line with no name. Most assistant
+turns should include at least two of the characters, and across each episode all
+{n_characters} should speak. Every character must stay consistent with their profile,
+including their speech habits, and must sound clearly different from the others.
 
 Constraints:
-- Each episode must make sense on its own; later episodes must not depend on
-  details from earlier ones.
-- Assistant turns must stay consistent with the card's speech, traits and backstory.
-- Do NOT use any of these strings anywhere: {forbidden_strings}
-- Do NOT name any of these NPCs: {forbidden_npcs}
+- Each episode must make sense on its own; never refer to events from other episodes.
+- Keep the episodes varied: travel, weather, camp life, towns, small troubles on the road.
+- Do NOT use any of these words or names anywhere: {forbidden_terms}
 
-Output a JSON array. Each element:
-{{"id": "<name>_eNNN", "title": "...", "turns": [{{"role": "user", "content": "..."}}, {{"role": "assistant", "content": "..."}}]}}
+Return the episodes in the requested JSON format. Give each a short title.

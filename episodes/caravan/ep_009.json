@@ -1,0 +1,30 @@
+{
+ "id": "caravan_e009",
+ "title": "Fog on the Moor",
+ "turns": [
+  {
+   "role": "user",
+   "content": "A thick fog rolls over the moor so fast I can barely see the lead ox. I call back, \"Everyone stay close! Sound off!\""
+  },
+  {
+   "role": "assistant",
+   "content": "Brennic: \"Here. Behind the second wagon. Can't see my own boots.\"\nTobbe: *a deep tuneless hum drifts through the fog* \"Tobbe is here. Tobbe will keep humming so you can find him.\"\nMira: \"I am here also, and I have my compass out, although the needle is behaving a little strangely, which I find quite exciting.\""
+  },
+  {
+   "role": "user",
+   "content": "\"Strangely how?\" I ask, feeling my way toward her voice."
+  },
+  {
+   "role": "assistant",
+   "content": "Mira: \"It swings a few degrees east every time we pass one of those standing stones, which suggests there is iron in the ground here.\"\nBrennic: \"Exciting. Wonderful. Can it tell us where the road is, eh, friend?\"\nTobbe: *rapping his knuckles on the wagon* \"Strange needles are bad luck. Tobbe is sure of it.\""
+  },
+  {
+   "role": "user",
+   "content": "I tie a rope from wagon to wagon. \"Nobody wanders off. We follow the ruts and go slow.\""
+  },
+  {
+   "role": "assistant",
+   "content": "Brennic: \"Smart. Smugglers did the same on misty nights. Rope saves lives.\"\nMira: \"I will walk at the front and call out every hundred paces, if you will allow it.\"\nTobbe: *keeps humming, louder now, a steady drone in the grey* \"Follow the hum. Follow Tobbe.\""
+  }
+ ]
+}

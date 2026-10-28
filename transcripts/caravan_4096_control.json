@@ -1,0 +1,263 @@
+{
+ "scenario": "caravan",
+ "depth": 4096,
+ "condition": "control",
+ "messages": [
+  {
+   "role": "user",
+   "content": "I lead the first wagon down to the riverbank and squint at the brown water churning past the ferry posts. \"That looks higher than it should be. Can we cross today?\""
+  },
+  {
+   "role": "assistant",
+   "content": "Brennic: *spits into the reeds* \"Too high. Ferryman'll want double. Maybe triple.\"\nMira: *pushes her spectacles up her nose* \"Halvard's Atlas records this crossing as fordable in late summer, but I suspect the rains in the hills have not yet drained, so I would not trust the old figures today.\"\nTobbe: *strokes the lead ox's neck* \"Ox does not like the water. Tobbe does not like it either.\""
+  },
+  {
+   "role": "user",
+   "content": "I walk over to the ferryman's hut and haggle, then come back. \"He wants four silver per wagon. That's robbery.\""
+  },
+  {
+   "role": "assistant",
+   "content": "Brennic: \"Robbery's honest work. This is worse.\" *rubs the brass ring in his ear scar* \"Pay him in silver. Not yellow. Never show him yellow, eh, friend?\"\nMira: \"If we wait one night, the level may fall by a hand's width, which I can measure against the third post, where someone has helpfully cut notches.\"\nTobbe: \"Tobbe can cook supper while we wait. Ox can rest.\""
+  },
+  {
+   "role": "user",
+   "content": "I nod. \"We camp here tonight and cross at dawn. Tobbe, make it something hot.\""
+  },
+  {
+   "role": "assistant",
+   "content": "Tobbe: *hums tunelessly, already unloading the pot* \"Barley and onion. Grandmother's way. Warm all the way down.\"\nBrennic: \"Good. If we drown tomorrow, we drown fed.\"\nTobbe: *quickly raps his knuckles on the wagon's side* \"No drowning talk. Tobbe knocks wood.\"\nMira: *already crouched at the third post, writing* \"I will take a reading every hour, and I will have the figures for you by morning.\""
+  },
+  {
+   "role": "user",
+   "content": "The rain turns sideways as we climb. I pull my hood tight and shout over the wind, \"Is there shelter anywhere up ahead?\""
+  },
+  {
+   "role": "assistant",
+   "content": "Brennic: *limps alongside the wagon, collar up* \"Overhang. Half a mile. If the rocks haven't moved.\"\nMira: \"Halvard's Atlas marks a shepherd's shelter near the second switchback, though I must admit the illustration is rather vague about whether it has a roof.\"\nTobbe: *drapes his own cloak over the nervous mule* \"Mule is cold. Tobbe is fine.\""
+  },
+  {
+   "role": "user",
+   "content": "\"Tobbe, you're soaked to the bone. Take my spare blanket.\" I toss it up to him."
+  },
+  {
+   "role": "assistant",
+   "content": "Tobbe: *catches it, then tucks it around the mule too* \"Thank you. Mule says thank you also.\"\nBrennic: \"Mule's better dressed than me now. Fine. I'll freeze with dignity.\"\nMira: *wipes her rain-streaked spectacles on a damp sleeve, which only smears them* \"I cannot see a thing, but I can hear water running somewhere to the left, which suggests a gully we should avoid.\""
+  },
+  {
+   "role": "user",
+   "content": "We reach the overhang and huddle beneath it. I wring out my sleeves. \"Well. It has a roof.\""
+  },
+  {
+   "role": "assistant",
+   "content": "Brennic: *drops onto a rock with a grunt, rubbing his right knee* \"Leg says the rain stops by dusk. Leg's never wrong. Mostly.\"\nMira: *opens her satchel to check her maps, sighing with relief* \"Dry. Every sheet. I wrapped them in oilcloth twice, and I am very glad I did.\"\nTobbe: *hums as he coaxes a small fire from dry twigs stored under the overhang* \"Someone kind left wood here. Tobbe will leave wood for the next one.\""
+  },
+  {
+   "role": "user",
+   "content": "At the gate of the market town, a guard in a stiff blue coat holds up a hand. I step forward. \"We're a trade caravan bound for Kesh Varran. What's the toll?\""
+  },
+  {
+   "role": "assistant",
+   "content": "The guard names a fee and taps a ledger, looking bored.\nBrennic: *mutters behind his hand* \"Coat's too clean. Never trust a clean coat.\"\nMira: \"I would like to know, if you do not mind, whether the toll is levied per wagon or per axle, because the distinction matters a great deal to our accounts.\"\nTobbe: *stands quietly at the back, very large, very polite*"
+  },
+  {
+   "role": "user",
+   "content": "The guard says per axle. I sigh and count out coins. \"Brennic, did you know about this?\""
+  },
+  {
+   "role": "assistant",
+   "content": "Brennic: \"Knew. Didn't say. You'd have fretted all week.\" *shrugs* \"Cheaper than the river tolls. River men take yellow and your teeth.\"\nTobbe: *winces* \"Not teeth.\"\nMira: *writing rapidly* \"I am recording the rate, the date, and the colour of his coat, for the guild's records and also because I find it interesting.\""
+  },
+  {
+   "role": "user",
+   "content": "The gate swings open. I wave the wagons through. \"Right. Supplies first, then an inn.\""
+  },
+  {
+   "role": "assistant",
+   "content": "Tobbe: *brightens* \"Market! Tobbe needs leeks. And salt. And maybe a small cake.\"\nBrennic: \"Watch your purses. Market towns have quick fingers.\" *pats his own belt twice* \"Mine included, once.\"\nMira: \"There is a bookseller listed on the town map, and I would very much like to visit it, if you can spare me for half an hour.\""
+  },
+  {
+   "role": "user",
+   "content": "Midmorning, the grey mule starts favouring her back leg. I call a halt. \"Something's wrong with her. Tobbe?\""
+  },
+  {
+   "role": "assistant",
+   "content": "Tobbe: *kneels beside the mule, lifting her hoof with enormous care* \"Shh, shh. Tobbe is here.\" *peers closely* \"Stone. Stuck deep.\"\nBrennic: *leans on the wagon wheel* \"Limping mule. Limping guide. We're a matched pair now.\"\nMira: \"I have a small pick in my instrument case, which I use for cleaning ink from the gears of my compass, and I believe it would work.\""
+  },
+  {
+   "role": "user",
+   "content": "I take the pick from Mira and hand it to Tobbe. \"You've got the steadiest hands here. Go easy.\""
+  },
+  {
+   "role": "assistant",
+   "content": "Tobbe: *works slowly, humming tunelessly to calm the animal* \"Almost. Almost.\" *the stone pops free* \"There. Good girl.\"\nMira: *picks up the stone and examines it* \"This is river flint, which is strange, because there is no river marked within four miles in Halvard's Atlas.\"\nBrennic: \"Maybe Halvard missed one. Wouldn't be the first time, eh, friend?\""
+  },
+  {
+   "role": "user",
+   "content": "I scratch the mule behind her ears. \"Can she walk?\""
+  },
+  {
+   "role": "assistant",
+   "content": "Tobbe: \"She walks slow today. Tobbe walks with her.\"\nBrennic: \"Then we all walk slow. Fine by me. My leg thanks her.\"\nMira: *pockets the flint and pushes up her spectacles* \"I am going to find that river, if it exists, and I will be very pleased with myself if I do.\""
+  },
+  {
+   "role": "user",
+   "content": "On night watch, I spot three pale lights bobbing along the ridge above camp. I nudge Brennic awake. \"Look. Up there.\""
+  },
+  {
+   "role": "assistant",
+   "content": "Brennic: *opens one copper eye, then both* \"Lanterns. Or something pretending.\" *reaches for his knife* \"Bandits don't usually announce themselves.\"\nTobbe: *sits up from his bedroll, eyes wide, rapping the wagon boards* \"Marsh spirits. Grandmother said never look at them.\"\nMira: *already awake, spectacles on* \"They are moving in a perfectly straight line, which is not what spirits or bandits would do, but is exactly what a party following a road would do.\""
+  },
+  {
+   "role": "user",
+   "content": "\"There's no road up there,\" I whisper. \"Is there?\""
+  },
+  {
+   "role": "assistant",
+   "content": "Mira: \"There is not one on any map I have, which is precisely why I would like to go and look.\"\nBrennic: \"No. You'd like to go and get your throat cut. Sit down.\"\nTobbe: *gently puts a huge hand on Mira's shoulder* \"Stay. Please. Tobbe asks nicely.\""
+  },
+  {
+   "role": "user",
+   "content": "The lights crest the ridge and vanish. I let out my breath. \"Gone. We'll double the watch until dawn.\""
+  },
+  {
+   "role": "assistant",
+   "content": "Brennic: \"Double watch. Good. I'll take the next turn. Not sleeping now anyway.\"\nMira: *scribbling by the embers* \"I am noting the time, the direction and the spacing of the lights, and tomorrow I intend to look for tracks.\"\nTobbe: *knocks the wagon wood three more times for good measure* \"Tobbe will make tea. Tea helps.\""
+  },
+  {
+   "role": "user",
+   "content": "Tobbe is rummaging through the supply wagon, looking distressed. I walk over. \"What's wrong, big man?\""
+  },
+  {
+   "role": "assistant",
+   "content": "Tobbe: \"Salt is gone. Whole sack. Tobbe packed it himself.\"\nBrennic: *from his seat on a barrel* \"Wasn't me. I prefer my thieving to pay better.\"\nMira: \"I recall seeing it this morning beside the water casks, and I remember because it was leaking a little, leaving a white line in the grass.\""
+  },
+  {
+   "role": "user",
+   "content": "I follow the faint white trail around the back of the wagon. \"Mira, you might have just solved this.\""
+  },
+  {
+   "role": "assistant",
+   "content": "The trail of salt leads into the brush, where a pair of goats is happily licking the torn sack.\nTobbe: *puts both hands on his head, over the carp tattoo* \"Goats! Little thieves.\"\nBrennic: *laughs, a short dry bark* \"Smugglers. Respect. Clean work.\"\nMira: \"Goats are known to seek salt, and I believe Halvard mentions it in his notes on hill farms.\""
+  },
+  {
+   "role": "user",
+   "content": "I scoop up what's left of the sack. \"Half of it's still good. Will it do for supper?\""
+  },
+  {
+   "role": "assistant",
+   "content": "Tobbe: *weighs it in his palm, humming* \"Half is enough. Tobbe will cook careful.\" *pats a goat's head* \"No more for you.\"\nBrennic: \"Tie the sack higher next time. Or hire a goat guard, eh, friend?\"\nMira: \"I would like it noted that I found the trail, and I have noted it myself, in case anyone forgets.\""
+  },
+  {
+   "role": "user",
+   "content": "Mira suddenly leaps off the wagon and runs toward a mossy stone by the roadside. I jog after her. \"Mira! What is it?\""
+  },
+  {
+   "role": "assistant",
+   "content": "Mira: *on her knees, scraping moss away with ink-stained fingers* \"It is a survey marker, a proper Collegium one, and there are marks cut into it that I have only seen in very old instruction books.\"\nBrennic: *limps up behind, scanning the treeline* \"Open ground. Bad spot to dawdle.\"\nTobbe: *catches up, panting* \"Tobbe thought she saw a snake.\""
+  },
+  {
+   "role": "user",
+   "content": "I keep an eye on the trees while she works. \"Can you read it?\""
+  },
+  {
+   "role": "assistant",
+   "content": "Mira: *pushes up her spectacles, frowning* \"It gives a distance and a bearing, though the distance does not match Halvard's Atlas at all, which means either Halvard was wrong or this stone was moved.\"\nBrennic: \"Stones don't walk. People move them. Usually for a reason, eh, friend?\"\nTobbe: *taps the wagon wheel nervously* \"Reasons are bad luck sometimes.\""
+  },
+  {
+   "role": "user",
+   "content": "\"Copy it down quickly,\" I say. \"Then we move.\""
+  },
+  {
+   "role": "assistant",
+   "content": "Mira: *already sketching* \"I have it, every mark, and I will compare it tonight against every map I carry.\"\nBrennic: \"Good. Copy faster. Something's watching from the birches. Probably a deer. Probably.\"\nTobbe: *gently lifts Mira to her feet like she weighs nothing* \"Up now. Walk with Tobbe.\""
+  },
+  {
+   "role": "user",
+   "content": "We round the bend and stop. The wooden bridge over the gorge has collapsed in the middle. I swear under my breath. \"How far around?\""
+  },
+  {
+   "role": "assistant",
+   "content": "Brennic: *stares at the wreckage, jaw tight* \"Two days. Maybe three. Through goat country.\"\nMira: \"Halvard's Atlas shows a ford eleven miles upstream, although the entry is marked with a small question mark, which is never encouraging.\"\nTobbe: *looks at the broken planks sadly* \"Poor bridge.\""
+  },
+  {
+   "role": "user",
+   "content": "I crouch and examine the snapped beams. \"These weren't rotten. Look, the cuts are clean.\""
+  },
+  {
+   "role": "assistant",
+   "content": "Brennic: *squats beside you with a wince* \"Saw marks. Somebody wanted folk to take the long way.\"\nMira: *leans dangerously over the edge to look* \"Fascinating. The cuts are angled, which means whoever did it stood beneath the bridge, on that ledge.\"\nTobbe: *grabs the back of her coat* \"Not so close. Please.\""
+  },
+  {
+   "role": "user",
+   "content": "\"So someone's waiting for us on the long road,\" I say. \"Ideas?\""
+  },
+  {
+   "role": "assistant",
+   "content": "Brennic: \"Old smuggler's trick. Rope across, wagons empty, goods carried over by hand. Slow. Safe.\"\nTobbe: \"Tobbe can carry. Tobbe carries heavy things all day.\"\nMira: \"I can calculate the span and the rope we would need, and I believe we have enough if we use the spare harness lines as well.\""
+  },
+  {
+   "role": "user",
+   "content": "A thick fog rolls over the moor so fast I can barely see the lead ox. I call back, \"Everyone stay close! Sound off!\""
+  },
+  {
+   "role": "assistant",
+   "content": "Brennic: \"Here. Behind the second wagon. Can't see my own boots.\"\nTobbe: *a deep tuneless hum drifts through the fog* \"Tobbe is here. Tobbe will keep humming so you can find him.\"\nMira: \"I am here also, and I have my compass out, although the needle is behaving a little strangely, which I find quite exciting.\""
+  },
+  {
+   "role": "user",
+   "content": "\"Strangely how?\" I ask, feeling my way toward her voice."
+  },
+  {
+   "role": "assistant",
+   "content": "Mira: \"It swings a few degrees east every time we pass one of those standing stones, which suggests there is iron in the ground here.\"\nBrennic: \"Exciting. Wonderful. Can it tell us where the road is, eh, friend?\"\nTobbe: *rapping his knuckles on the wagon* \"Strange needles are bad luck. Tobbe is sure of it.\""
+  },
+  {
+   "role": "user",
+   "content": "I tie a rope from wagon to wagon. \"Nobody wanders off. We follow the ruts and go slow.\""
+  },
+  {
+   "role": "assistant",
+   "content": "Brennic: \"Smart. Smugglers did the same on misty nights. Rope saves lives.\"\nMira: \"I will walk at the front and call out every hundred paces, if you will allow it.\"\nTobbe: *keeps humming, louder now, a steady drone in the grey* \"Follow the hum. Follow Tobbe.\""
+  },
+  {
+   "role": "user",
+   "content": "After supper, I pull out a worn deck of cards and shuffle. \"Anyone want to lose some coppers?\""
+  },
+  {
+   "role": "assistant",
+   "content": "Brennic: *eyes light up, copper-bright in the firelight* \"Lose? Me? Deal.\"\nTobbe: *settles down, the log groaning under him* \"Tobbe plays. Tobbe does not know the rules.\"\nMira: \"I have read three books on games of chance, and I believe I understand the probabilities well, though I have never actually played.\""
+  },
+  {
+   "role": "user",
+   "content": "I deal out the cards and explain the rules. A few rounds later, Tobbe has a large pile of coins. \"Tobbe, how are you winning?\""
+  },
+  {
+   "role": "assistant",
+   "content": "Tobbe: *beams* \"Tobbe does not know. Tobbe just likes the pretty ones.\"\nBrennic: *squinting at him* \"Pit-fighter face. Never moves. Unfair advantage.\"\nMira: *scribbling numbers on a scrap* \"It should not be possible, statistically, unless he is extraordinarily lucky, which I suppose he is.\""
+  },
+  {
+   "role": "user",
+   "content": "I catch Brennic slipping a card into his sleeve. \"Brennic. Sleeve.\""
+  },
+  {
+   "role": "assistant",
+   "content": "Brennic: *produces the card with a crooked grin* \"Habit. Twelve years on the river. Hands do things.\"\nTobbe: *knocks on the log solemnly* \"Cheating brings bad luck.\"\nMira: \"I would like to know how you did that, purely for academic reasons, because I did not see it at all.\""
+  },
+  {
+   "role": "user",
+   "content": "Snow begins to fall thick and fast as we climb the high pass. I stamp my feet. \"It's barely autumn. Was this expected?\""
+  },
+  {
+   "role": "assistant",
+   "content": "Brennic: *pulls his scarf over the scar where his ear used to be* \"Mountains don't read calendars.\"\nMira: \"Halvard's Atlas warns that early snow is common above the treeline here, though I confess I skipped that paragraph because it seemed so unlikely.\"\nTobbe: *wraps the oxen's legs in sacking, humming* \"Oxen need socks.\""
+  },
+  {
+   "role": "user",
+   "content": "I help Tobbe with the sacking. \"How long to the top of the pass?\""
+  },
+  {
+   "role": "assistant",
+   "content": "Brennic: \"Three hours, clear weather. Six in this. Maybe never.\"\nTobbe: *stops wrapping to tap the wagon* \"Not never. Never is bad luck.\"\nMira: *looking up, snowflakes on her silver hair, smiling* \"It is beautiful, though, and I do not think I have ever seen flakes this large.\""
+  }
+ ]
+}

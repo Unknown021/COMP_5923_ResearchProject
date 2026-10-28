@@ -2,7 +2,8 @@
 
 Recall:  accuracy per (quant, depth, condition, position band) with Wilson 95% CIs;
          unresolved trials (flagged, not yet adjudicated or overridden) are excluded.
-Persona: mean score per criterion and overall per (quant, depth); repeat judgments excluded.
+Persona: mean score per criterion and overall per (quant, depth), and per character;
+         repeat judgments excluded.
 Judge:   self-consistency on repeated items, when there are any.
 
 TODO (check-in #4): logistic model correct ~ quant * depth + position with character/fact
@@ -18,7 +19,7 @@ from statsmodels.stats.proportion import proportion_confint
 
 from common import ROOT, load_config, read_jsonl
 
-CRITERIA = ["knowledge", "speech", "traits", "hallucination"]
+CRITERIA = ["knowledge", "speech", "traits", "hallucination", "distinctness"]
 
 
 def recall_summary(scored):
@@ -31,11 +32,12 @@ def recall_summary(scored):
     return table
 
 
-def persona_summary(judged):
+def persona_summary(judged, by=("quant", "depth")):
     cols = [f"score_{c}" for c in CRITERIA] + ["score_mean", "response_tokens"]
     first = judged[~judged["repeat"]]
-    table = first.groupby(["quant", "depth"])[cols].mean().round(2)
-    table.insert(0, "n", first.groupby(["quant", "depth"]).size())
+    by = list(by)
+    table = first.groupby(by)[cols].mean().round(2)
+    table.insert(0, "n", first.groupby(by).size())
     return table.reset_index()
 
 
@@ -79,6 +81,11 @@ def main():
     persona = persona_summary(judged)
     print(f"Persona scores, 1-5 ({run})\n{persona.to_string(index=False)}\n")
     persona.to_csv(ROOT / "results" / f"{run}_persona_summary.csv", index=False)
+    by_char = persona_summary(judged, by=("quant", "depth", "character"))
+    print(f"Persona scores by character\n{by_char.to_string(index=False)}\n")
+    flags = judged[~judged["repeat"]][["target_absent", "broke_character"]].sum()
+    if flags.any():
+        print(f"Flags: target absent {int(flags['target_absent'])}, broke character {int(flags['broke_character'])}\n")
 
     if (consistency := judge_consistency(judged)) is not None:
         print("Judge self-agreement on repeats: " + ", ".join(f"{c}={v:.0%}" for c, v in consistency.items()))

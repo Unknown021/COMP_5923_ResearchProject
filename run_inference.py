@@ -1,12 +1,14 @@
 """Run every trial in the config grid against llama-server; one JSONL line per trial.
 
-Loop: quant -> (start server) -> character x depth -> seed -> probe.
-Each probe is a fresh conversation: system card + transcript + one probe. Probes for
-the same transcript and seed run back to back so llama-server reuses the cached prefix.
+Loop: quant -> (start server) -> scenario x depth -> seed -> probe.
+Each probe is a fresh conversation: scenario system prompt (all character cards) +
+transcript + one probe. Every transcript gets one recall probe per fact and one persona
+probe per character. Probes for the same transcript and seed run back to back so
+llama-server reuses the cached prefix.
 
-Input:  transcripts/<name>_<depth>.json          {"messages": [...]}
-        transcripts/<name>_<depth>.manifest.json {"facts": {id: {"token_offset", "relative_position"}}}
-        transcripts/<name>_<depth>_control.json  (only when control.enabled)
+Input:  transcripts/<scenario>_<depth>.json          {"messages": [...]}
+        transcripts/<scenario>_<depth>.manifest.json {"facts": {id: {"token_offset", "relative_position"}}}
+        transcripts/<scenario>_<depth>_control.json  (only when control.enabled)
 Output: results/raw/<run_name>.jsonl, server logs in logs/
 """
 
@@ -15,8 +17,8 @@ import json
 from datetime import datetime, timezone
 from pathlib import Path
 
-from common import (ROOT, LlamaServer, append_jsonl, load_config, load_yaml, read_jsonl, render_card,
-                    sha256_file, start_server, stop_server)
+from common import (ROOT, LlamaServer, append_jsonl, load_config, load_scenario, load_yaml, read_jsonl,
+                    render_scene, sha256_file, start_server, stop_server)
 
 
 def transcript_path(cfg, name, depth, control=False):
@@ -27,8 +29,8 @@ def transcript_path(cfg, name, depth, control=False):
 def build_trials(cfg, quant):
     """Expand the config grid into trial dicts for one quant, grouped by transcript then seed."""
     trials = []
-    for name in cfg["characters"]:
-        card = load_yaml(f"{cfg['paths']['characters']}/{name}.yaml")
+    for name in cfg["scenarios"]:
+        scenario = load_scenario(cfg, name)
         facts = load_yaml(f"{cfg['paths']['facts']}/{name}.yaml")["facts"]
         conditions = ["main"]
         if cfg["control"]["enabled"] and quant == cfg["control"]["quant"]:
@@ -43,7 +45,7 @@ def build_trials(cfg, quant):
                         manifest = json.load(f)["facts"]
 
                 for seed in cfg["seeds"]:
-                    base = {"character": name, "depth": depth, "condition": condition,
+                    base = {"scenario": name, "depth": depth, "condition": condition,
                             "seed": seed, "transcript": path.name}
                     for fact in facts:
                         placed = manifest.get(fact["id"], {})
@@ -51,34 +53,37 @@ def build_trials(cfg, quant):
                             **base,
                             "probe_type": "recall",
                             "probe_id": fact["id"],
+                            "character": None,
                             "probe": fact["probe_question"],
                             "position_band": fact["position_band"],
                             "target_position": fact["target_relative_position"],
                             "actual_position": placed.get("relative_position"),
                             "token_offset": placed.get("token_offset"),
                         })
-                    # Persona is meaningless without a card, so the control runs recall only
+                    # Persona is meaningless without the cards, so the control runs recall only
                     if condition == "main":
-                        trials.append({**base, "probe_type": "persona", "probe_id": "persona",
-                                       "probe": card["persona_probe"].strip()})
+                        for cid, card in scenario["cards"].items():
+                            trials.append({**base, "probe_type": "persona", "probe_id": f"persona_{cid}",
+                                           "character": cid, "probe": card["persona_probe"].strip()})
     for t in trials:
         t["quant"] = quant
-        t["trial_id"] = f"{quant}|{t['character']}|{t['depth']}|{t['condition']}|{t['seed']}|{t['probe_id']}"
+        t["trial_id"] = f"{quant}|{t['scenario']}|{t['depth']}|{t['condition']}|{t['seed']}|{t['probe_id']}"
     return trials
 
 
-def build_messages(cfg, trial, transcript_cache):
-    """System card (main condition only) + transcript turns + the probe as the final user turn."""
+def build_messages(cfg, trial, cache):
+    """Scenario system prompt (main condition only) + transcript turns + the probe as the final user turn."""
     key = trial["transcript"]
-    if key not in transcript_cache:
-        path = ROOT / cfg["paths"]["transcripts"] / key
-        with open(path, encoding="utf-8") as f:
-            transcript_cache[key] = json.load(f)["messages"]
+    if key not in cache:
+        with open(ROOT / cfg["paths"]["transcripts"] / key, encoding="utf-8") as f:
+            cache[key] = json.load(f)["messages"]
+    scenario_key = ("system", trial["scenario"])
+    if scenario_key not in cache:
+        cache[scenario_key] = render_scene(load_scenario(cfg, trial["scenario"]))
     messages = []
     if trial["condition"] == "main":
-        card = load_yaml(f"{cfg['paths']['characters']}/{trial['character']}.yaml")
-        messages.append({"role": "system", "content": render_card(card)})
-    messages += transcript_cache[key]
+        messages.append({"role": "system", "content": cache[scenario_key]})
+    messages += cache[key]
     messages.append({"role": "user", "content": trial["probe"]})
     return messages
 
@@ -135,9 +140,9 @@ def main():
         print(f"{quant}: starting llama-server (log: {log_path.name})")
         proc = start_server(cfg, model_path, log_path)
         try:
-            transcript_cache = {}
+            cache = {}
             for i, trial in enumerate(trials, 1):
-                messages = build_messages(cfg, trial, transcript_cache)
+                messages = build_messages(cfg, trial, cache)
                 record = run_trial(server, cfg, trial, messages)
                 append_jsonl(out, {**model_meta, **record, "server_log": log_path.name})
                 print(f"{quant}: {i}/{len(trials)} {trial['trial_id']} "

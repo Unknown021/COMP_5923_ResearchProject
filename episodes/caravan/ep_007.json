@@ -1,0 +1,30 @@
+{
+ "id": "caravan_e007",
+ "title": "The Old Survey Stone",
+ "turns": [
+  {
+   "role": "user",
+   "content": "Mira suddenly leaps off the wagon and runs toward a mossy stone by the roadside. I jog after her. \"Mira! What is it?\""
+  },
+  {
+   "role": "assistant",
+   "content": "Mira: *on her knees, scraping moss away with ink-stained fingers* \"It is a survey marker, a proper Collegium one, and there are marks cut into it that I have only seen in very old instruction books.\"\nBrennic: *limps up behind, scanning the treeline* \"Open ground. Bad spot to dawdle.\"\nTobbe: *catches up, panting* \"Tobbe thought she saw a snake.\""
+  },
+  {
+   "role": "user",
+   "content": "I keep an eye on the trees while she works. \"Can you read it?\""
+  },
+  {
+   "role": "assistant",
+   "content": "Mira: *pushes up her spectacles, frowning* \"It gives a distance and a bearing, though the distance does not match Halvard's Atlas at all, which means either Halvard was wrong or this stone was moved.\"\nBrennic: \"Stones don't walk. People move them. Usually for a reason, eh, friend?\"\nTobbe: *taps the wagon wheel nervously* \"Reasons are bad luck sometimes.\""
+  },
+  {
+   "role": "user",
+   "content": "\"Copy it down quickly,\" I say. \"Then we move.\""
+  },
+  {
+   "role": "assistant",
+   "content": "Mira: *already sketching* \"I have it, every mark, and I will compare it tonight against every map I carry.\"\nBrennic: \"Good. Copy faster. Something's watching from the birches. Probably a deer. Probably.\"\nTobbe: *gently lifts Mira to her feet like she weighs nothing* \"Up now. Walk with Tobbe.\""
+  }
+ ]
+}

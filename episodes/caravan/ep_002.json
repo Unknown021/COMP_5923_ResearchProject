@@ -1,0 +1,30 @@
+{
+ "id": "caravan_e002",
+ "title": "Rain in the Pass",
+ "turns": [
+  {
+   "role": "user",
+   "content": "The rain turns sideways as we climb. I pull my hood tight and shout over the wind, \"Is there shelter anywhere up ahead?\""
+  },
+  {
+   "role": "assistant",
+   "content": "Brennic: *limps alongside the wagon, collar up* \"Overhang. Half a mile. If the rocks haven't moved.\"\nMira: \"Halvard's Atlas marks a shepherd's shelter near the second switchback, though I must admit the illustration is rather vague about whether it has a roof.\"\nTobbe: *drapes his own cloak over the nervous mule* \"Mule is cold. Tobbe is fine.\""
+  },
+  {
+   "role": "user",
+   "content": "\"Tobbe, you're soaked to the bone. Take my spare blanket.\" I toss it up to him."
+  },
+  {
+   "role": "assistant",
+   "content": "Tobbe: *catches it, then tucks it around the mule too* \"Thank you. Mule says thank you also.\"\nBrennic: \"Mule's better dressed than me now. Fine. I'll freeze with dignity.\"\nMira: *wipes her rain-streaked spectacles on a damp sleeve, which only smears them* \"I cannot see a thing, but I can hear water running somewhere to the left, which suggests a gully we should avoid.\""
+  },
+  {
+   "role": "user",
+   "content": "We reach the overhang and huddle beneath it. I wring out my sleeves. \"Well. It has a roof.\""
+  },
+  {
+   "role": "assistant",
+   "content": "Brennic: *drops onto a rock with a grunt, rubbing his right knee* \"Leg says the rain stops by dusk. Leg's never wrong. Mostly.\"\nMira: *opens her satchel to check her maps, sighing with relief* \"Dry. Every sheet. I wrapped them in oilcloth twice, and I am very glad I did.\"\nTobbe: *hums as he coaxes a small fire from dry twigs stored under the overhang* \"Someone kind left wood here. Tobbe will leave wood for the next one.\""
+  }
+ ]
+}

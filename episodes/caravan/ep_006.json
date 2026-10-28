@@ -1,0 +1,30 @@
+{
+ "id": "caravan_e006",
+ "title": "The Missing Salt",
+ "turns": [
+  {
+   "role": "user",
+   "content": "Tobbe is rummaging through the supply wagon, looking distressed. I walk over. \"What's wrong, big man?\""
+  },
+  {
+   "role": "assistant",
+   "content": "Tobbe: \"Salt is gone. Whole sack. Tobbe packed it himself.\"\nBrennic: *from his seat on a barrel* \"Wasn't me. I prefer my thieving to pay better.\"\nMira: \"I recall seeing it this morning beside the water casks, and I remember because it was leaking a little, leaving a white line in the grass.\""
+  },
+  {
+   "role": "user",
+   "content": "I follow the faint white trail around the back of the wagon. \"Mira, you might have just solved this.\""
+  },
+  {
+   "role": "assistant",
+   "content": "The trail of salt leads into the brush, where a pair of goats is happily licking the torn sack.\nTobbe: *puts both hands on his head, over the carp tattoo* \"Goats! Little thieves.\"\nBrennic: *laughs, a short dry bark* \"Smugglers. Respect. Clean work.\"\nMira: \"Goats are known to seek salt, and I believe Halvard mentions it in his notes on hill farms.\""
+  },
+  {
+   "role": "user",
+   "content": "I scoop up what's left of the sack. \"Half of it's still good. Will it do for supper?\""
+  },
+  {
+   "role": "assistant",
+   "content": "Tobbe: *weighs it in his palm, humming* \"Half is enough. Tobbe will cook careful.\" *pats a goat's head* \"No more for you.\"\nBrennic: \"Tie the sack higher next time. Or hire a goat guard, eh, friend?\"\nMira: \"I would like it noted that I found the trail, and I have noted it myself, in case anyone forgets.\""
+  }
+ ]
+}

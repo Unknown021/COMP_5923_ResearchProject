@@ -1,0 +1,82 @@
+{
+ "total_tokens": 4048,
+ "system_tokens": 686,
+ "facts": {
+  "f01": {
+   "message_index": 2,
+   "token_offset": 835,
+   "relative_position": 0.0443
+  },
+  "f02": {
+   "message_index": 6,
+   "token_offset": 1040,
+   "relative_position": 0.1053
+  },
+  "f03": {
+   "message_index": 10,
+   "token_offset": 1250,
+   "relative_position": 0.1678
+  },
+  "f04": {
+   "message_index": 14,
+   "token_offset": 1434,
+   "relative_position": 0.2225
+  },
+  "f05": {
+   "message_index": 18,
+   "token_offset": 1629,
+   "relative_position": 0.2805
+  },
+  "f06": {
+   "message_index": 24,
+   "token_offset": 1984,
+   "relative_position": 0.3861
+  },
+  "f07": {
+   "message_index": 28,
+   "token_offset": 2174,
+   "relative_position": 0.4426
+  },
+  "f08": {
+   "message_index": 32,
+   "token_offset": 2350,
+   "relative_position": 0.4949
+  },
+  "f09": {
+   "message_index": 36,
+   "token_offset": 2548,
+   "relative_position": 0.5538
+  },
+  "f10": {
+   "message_index": 42,
+   "token_offset": 2832,
+   "relative_position": 0.6383
+  },
+  "f11": {
+   "message_index": 46,
+   "token_offset": 3053,
+   "relative_position": 0.704
+  },
+  "f12": {
+   "message_index": 52,
+   "token_offset": 3333,
+   "relative_position": 0.7873
+  },
+  "f13": {
+   "message_index": 56,
+   "token_offset": 3499,
+   "relative_position": 0.8367
+  },
+  "f14": {
+   "message_index": 60,
+   "token_offset": 3677,
+   "relative_position": 0.8896
+  },
+  "f15": {
+   "message_index": 64,
+   "token_offset": 3850,
+   "relative_position": 0.9411
+  }
+ },
+ "validation_errors": []
+}

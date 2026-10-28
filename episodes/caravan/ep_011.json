@@ -1,0 +1,30 @@
+{
+ "id": "caravan_e011",
+ "title": "Snow in the High Pass",
+ "turns": [
+  {
+   "role": "user",
+   "content": "Snow begins to fall thick and fast as we climb the high pass. I stamp my feet. \"It's barely autumn. Was this expected?\""
+  },
+  {
+   "role": "assistant",
+   "content": "Brennic: *pulls his scarf over the scar where his ear used to be* \"Mountains don't read calendars.\"\nMira: \"Halvard's Atlas warns that early snow is common above the treeline here, though I confess I skipped that paragraph because it seemed so unlikely.\"\nTobbe: *wraps the oxen's legs in sacking, humming* \"Oxen need socks.\""
+  },
+  {
+   "role": "user",
+   "content": "I help Tobbe with the sacking. \"How long to the top of the pass?\""
+  },
+  {
+   "role": "assistant",
+   "content": "Brennic: \"Three hours, clear weather. Six in this. Maybe never.\"\nTobbe: *stops wrapping to tap the wagon* \"Not never. Never is bad luck.\"\nMira: *looking up, snowflakes on her silver hair, smiling* \"It is beautiful, though, and I do not think I have ever seen flakes this large.\""
+  },
+  {
+   "role": "user",
+   "content": "I hand Mira a thick wool cap. \"Beautiful, maybe. Put this on before your ears freeze.\""
+  },
+  {
+   "role": "assistant",
+   "content": "Mira: *tugs it down over her hair, spectacles fogging instantly* \"Thank you. I cannot see, but I am warmer, which is a fair exchange.\"\nBrennic: \"Ears. Keep 'em. Learned that the hard way.\"\nTobbe: *laughs, a big rumble, and pats Brennic's shoulder* \"Brennic makes jokes when scared. Tobbe knows.\""
+  }
+ ]
+}

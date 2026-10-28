@@ -1,0 +1,30 @@
+{
+ "id": "caravan_e008",
+ "title": "The Broken Bridge",
+ "turns": [
+  {
+   "role": "user",
+   "content": "We round the bend and stop. The wooden bridge over the gorge has collapsed in the middle. I swear under my breath. \"How far around?\""
+  },
+  {
+   "role": "assistant",
+   "content": "Brennic: *stares at the wreckage, jaw tight* \"Two days. Maybe three. Through goat country.\"\nMira: \"Halvard's Atlas shows a ford eleven miles upstream, although the entry is marked with a small question mark, which is never encouraging.\"\nTobbe: *looks at the broken planks sadly* \"Poor bridge.\""
+  },
+  {
+   "role": "user",
+   "content": "I crouch and examine the snapped beams. \"These weren't rotten. Look, the cuts are clean.\""
+  },
+  {
+   "role": "assistant",
+   "content": "Brennic: *squats beside you with a wince* \"Saw marks. Somebody wanted folk to take the long way.\"\nMira: *leans dangerously over the edge to look* \"Fascinating. The cuts are angled, which means whoever did it stood beneath the bridge, on that ledge.\"\nTobbe: *grabs the back of her coat* \"Not so close. Please.\""
+  },
+  {
+   "role": "user",
+   "content": "\"So someone's waiting for us on the long road,\" I say. \"Ideas?\""
+  },
+  {
+   "role": "assistant",
+   "content": "Brennic: \"Old smuggler's trick. Rope across, wagons empty, goods carried over by hand. Slow. Safe.\"\nTobbe: \"Tobbe can carry. Tobbe carries heavy things all day.\"\nMira: \"I can calculate the span and the rope we would need, and I believe we have enough if we use the spare harness lines as well.\""
+  }
+ ]
+}

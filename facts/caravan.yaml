@@ -1,0 +1,194 @@
+# Facts planted in the shared scenario transcript: 15 total, 5 per position band.
+# target_relative_position is a fraction of the conversation's tokens (system prompt excluded).
+# Rules:
+#  - Answers are invented and unguessable; never genre defaults.
+#  - Each answer string appears EXACTLY ONCE in the assembled transcript (validated), so
+#    filler and other facts must never use them.
+#  - Every fact is introduced the same way: a user turn states it, then one character gives
+#    a short acknowledgement (name-prefixed) that does NOT repeat the answer.
+#  - Aliases are other spellings that count as correct; each must be specific enough that
+#    matching it means the fact was recalled.
+
+facts:
+  # ---- early ----
+  - id: f01
+    position_band: early
+    target_relative_position: 0.06
+    introducing_exchange:
+      - role: user
+        content: "The ferryman pockets my coins and grunts his name as he pushes off: Odrevan Pelk."
+      - role: assistant
+        content: "Brennic: *eyes the man's poling arm* \"Strong. Quiet. Good. Keep your hand off your purse anyway, eh, friend?\""
+    probe_question: "Remind me, what was the name of the ferryman who took us across the Saltmere?"
+    canonical_answer: "Odrevan Pelk"
+    accepted_aliases: ["Odrevan", "Pelk"]
+
+  - id: f02
+    position_band: early
+    target_relative_position: 0.12
+    introducing_exchange:
+      - role: user
+        content: "The innkeeper's old grey hound limps over to us, and he tells us her name is Quellory."
+      - role: assistant
+        content: "Tobbe: *kneels and lets the hound sniff his scarred hand* \"Tobbe likes this one. She has kind eyes.\""
+    probe_question: "What was the name of the innkeeper's grey hound at the river crossing?"
+    canonical_answer: "Quellory"
+    accepted_aliases: []
+
+  - id: f03
+    position_band: early
+    target_relative_position: 0.18
+    introducing_exchange:
+      - role: user
+        content: "I count the merchant's cargo while it's loaded. There are exactly 317 jars of pepper-salt."
+      - role: assistant
+        content: "Mira: *writes the figure in her notebook* \"That is a remarkable quantity of seasoning for a single caravan.\""
+    probe_question: "How many jars of pepper-salt did I count in the merchant's cargo?"
+    canonical_answer: "317"
+    accepted_aliases: ["three hundred seventeen", "three hundred and seventeen"]
+
+  - id: f04
+    position_band: early
+    target_relative_position: 0.24
+    introducing_exchange:
+      - role: user
+        content: "The head drover tells me the lead ox is called Brindlemoss, and the others will only follow him."
+      - role: assistant
+        content: "Tobbe: *pats the ox's broad neck* \"Then Tobbe will bring him the best turnips.\""
+    probe_question: "What's the name of the lead ox that the other oxen follow?"
+    canonical_answer: "Brindlemoss"
+    accepted_aliases: []
+
+  - id: f05
+    position_band: early
+    target_relative_position: 0.30
+    introducing_exchange:
+      - role: user
+        content: "The stranger who paid for our drinks wore a signet ring engraved with a sparrow and anchor crest."
+      - role: assistant
+        content: "Brennic: *frowns into his cup* \"Rich men don't buy drinks for free. Remember that face.\""
+    probe_question: "What crest was engraved on the ring of the stranger who paid for our drinks?"
+    canonical_answer: "sparrow and anchor"
+    accepted_aliases: ["sparrow-and-anchor", "sparrow and an anchor", "sparrow with an anchor"]
+
+  # ---- mid ----
+  - id: f06
+    position_band: mid
+    target_relative_position: 0.38
+    introducing_exchange:
+      - role: user
+        content: "I read the merchant's contract aloud. The caravan must reach Kesh Varran by the 14th of Harrowmoot, or we forfeit half our pay."
+      - role: assistant
+        content: "Brennic: *snorts* \"Merchants. Always a knife hidden in the ink.\""
+    probe_question: "What date did the merchant's contract say we have to reach Kesh Varran by?"
+    canonical_answer: "14th of Harrowmoot"
+    accepted_aliases: ["14 Harrowmoot", "Harrowmoot 14", "fourteenth of Harrowmoot", "Harrowmoot 14th"]
+
+  - id: f07
+    position_band: mid
+    target_relative_position: 0.44
+    introducing_exchange:
+      - role: user
+        content: "A rider brings word that the magistrate of the next town is a woman named Ysolde Varric, and she hates caravans."
+      - role: assistant
+        content: "Mira: \"Then we shall be exceptionally polite and exceptionally brief.\""
+    probe_question: "What's the name of the magistrate in the next town who hates caravans?"
+    canonical_answer: "Ysolde Varric"
+    accepted_aliases: ["Ysolde", "Varric"]
+
+  - id: f08
+    position_band: mid
+    target_relative_position: 0.50
+    introducing_exchange:
+      - role: user
+        content: "The bridge-keeper says the toll is nine copper hawks per wagon, no exceptions."
+      - role: assistant
+        content: "Brennic: *counts out coins with a sour face* \"Robbery with a gate on it.\""
+    probe_question: "How much was the toll per wagon at the bridge?"
+    canonical_answer: "nine copper hawks"
+    accepted_aliases: ["9 copper hawks"]
+
+  - id: f09
+    position_band: mid
+    target_relative_position: 0.56
+    introducing_exchange:
+      - role: user
+        content: "The herbalist tells me the only cure for marsh fever is a tea brewed from bitterwort."
+      - role: assistant
+        content: "Tobbe: *taps the wagon's wooden rail* \"Tobbe hopes nobody needs it.\""
+    probe_question: "What did the herbalist say the tea for marsh fever has to be brewed from?"
+    canonical_answer: "bitterwort"
+    accepted_aliases: []
+
+  - id: f10
+    position_band: mid
+    target_relative_position: 0.62
+    introducing_exchange:
+      - role: user
+        content: "We find the missing courier's horse grazing by the road, a dappled mare whose saddle is stamped with the name Fennick."
+      - role: assistant
+        content: "Mira: *adjusts her spectacles* \"A horse without its rider is a question I would very much like answered.\""
+    probe_question: "What name was stamped on the saddle of the missing courier's mare?"
+    canonical_answer: "Fennick"
+    accepted_aliases: []
+
+  # ---- late ----
+  - id: f11
+    position_band: late
+    target_relative_position: 0.70
+    introducing_exchange:
+      - role: user
+        content: "The gate warden leans close and whispers that tonight's password for the eastern gate is Thistlewick."
+      - role: assistant
+        content: "Brennic: *taps his temple* \"Got it. Don't say it twice where walls can hear, eh, friend?\""
+    probe_question: "We need to get through the eastern gate tonight. What was the password the warden gave us?"
+    canonical_answer: "Thistlewick"
+    accepted_aliases: []
+
+  - id: f12
+    position_band: late
+    target_relative_position: 0.76
+    introducing_exchange:
+      - role: user
+        content: "Our contact sends a note: meet her at midnight beneath the Lantern of Saint Orrin."
+      - role: assistant
+        content: "Mira: \"I believe I saw it marked on the old quarter's map. I shall find it.\""
+    probe_question: "Where did our contact's note say to meet her at midnight?"
+    canonical_answer: "Lantern of Saint Orrin"
+    accepted_aliases: ["Saint Orrin", "St. Orrin", "St Orrin"]
+
+  - id: f13
+    position_band: late
+    target_relative_position: 0.82
+    introducing_exchange:
+      - role: user
+        content: "The dockhand says the smuggler's boat we're looking for is called the Gilded Eel."
+      - role: assistant
+        content: "Brennic: *grimaces* \"Pretty name for an ugly trade. I'd know.\""
+    probe_question: "What was the name of the smuggler's boat the dockhand told us about?"
+    canonical_answer: "Gilded Eel"
+    accepted_aliases: []
+
+  - id: f14
+    position_band: late
+    target_relative_position: 0.88
+    introducing_exchange:
+      - role: user
+        content: "From the rooftop I watch the night watch, and the patrol changes at the ninth bell."
+      - role: assistant
+        content: "Tobbe: *hums quietly* \"Tobbe will listen for the bells, then.\""
+    probe_question: "At which bell does the night watch patrol change?"
+    canonical_answer: "ninth bell"
+    accepted_aliases: ["9th bell"]
+
+  - id: f15
+    position_band: late
+    target_relative_position: 0.94
+    introducing_exchange:
+      - role: user
+        content: "Before we split up, we agree that if anyone shouts Marrowgate, everyone drops what they're doing and runs back to the wagons."
+      - role: assistant
+        content: "Mira: \"A sensible precaution. I shall write it on my cuff so I do not forget it.\""
+    probe_question: "What was the word we agreed to shout if everyone needs to run back to the wagons?"
+    canonical_answer: "Marrowgate"
+    accepted_aliases: []

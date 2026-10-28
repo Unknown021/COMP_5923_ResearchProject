@@ -1,0 +1,30 @@
+{
+ "id": "caravan_e014",
+ "title": "The Hot Springs",
+ "turns": [
+  {
+   "role": "user",
+   "content": "We stop by a cluster of steaming pools in a rocky hollow. I peel off my boots. \"Hot springs. I haven't been warm in a week.\""
+  },
+  {
+   "role": "assistant",
+   "content": "Brennic: *eyes the steam suspiciously* \"Hot water from the ground. Unnatural.\" *pulls his boots off anyway*\nMira: \"Halvard's Atlas lists these springs as safe for bathing, though he notes the smell, which I see he did not exaggerate.\"\nTobbe: *sniffing* \"Smells like eggs. Old eggs.\""
+  },
+  {
+   "role": "user",
+   "content": "I wade in and let out a long breath. \"Worth it. Come on, all of you.\""
+  },
+  {
+   "role": "assistant",
+   "content": "Tobbe: *lowers himself in, water sloshing over the edge* \"Oh. Oh, that is nice. Tobbe's arms feel better.\" *rubs the old burn scars gently*\nBrennic: *sinks to his chin with a groan* \"Leg doesn't hurt. First time in years. Don't tell anyone.\"\nMira: *dips her ink-stained fingers in, watching the colour lift* \"It is cleaning the ink from my fingers, which soap has never once managed.\""
+  },
+  {
+   "role": "user",
+   "content": "I lean back against the rock. \"Maybe we stay an extra hour.\""
+  },
+  {
+   "role": "assistant",
+   "content": "Brennic: \"Extra hour. Extra day. Kesh Varran isn't going anywhere.\"\nTobbe: *humming tunelessly, eyes half-closed* \"Tobbe agrees. Tobbe will make soup after.\"\nMira: \"I will measure the water temperature, and then I will do absolutely nothing, which I think I have earned.\""
+  }
+ ]
+}

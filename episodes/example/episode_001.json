@@ -1,8 +1,0 @@
-{
-  "id": "example_e001",
-  "title": "Arrival at the Saltmere crossing",
-  "turns": [
-    {"role": "user", "content": "We reach the river crossing at dusk. The water is high and brown with silt."},
-    {"role": "assistant", "content": "Brennic spits into the reeds. \"Too high. Ferry'll charge double. Always does when the river's angry, eh, friend?\""}
-  ]
-}

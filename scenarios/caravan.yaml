@@ -1,0 +1,12 @@
+# A scenario is one shared story. The model voices every character in it at once, and each
+# depth gets a single transcript that all recall and persona probes run against.
+# Facts live in facts/<scenario>.yaml and filler episodes in episodes/<scenario>/.
+
+name: The Kesh Varran caravan
+setting: >
+  A merchant caravan travels overland toward the city of Kesh Varran through river
+  country, mountain passes and market towns. The user's character is a hired guard
+  travelling with the caravan.
+
+# Character ids matching characters/<id>.yaml, in the order they appear in the system prompt
+characters: [brennic, mira, tobbe]

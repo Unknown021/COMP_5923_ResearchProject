@@ -42,22 +42,53 @@ def sha256_file(path, chunk=1 << 20):
     return h.hexdigest()
 
 
-def render_card(card):
-    """Render a character card dict into the system prompt text.
+def first_name(card):
+    return card["name"].split()[0]
 
-    Only the in-world fields are rendered; `markers` and `persona_probe` are for scoring.
+
+def render_card(card):
+    """Render one character's in-world fields as a profile.
+
+    `markers`, `judge_anchors` and `persona_probe` are for scoring and are never rendered.
     """
     def bullets(items):
         return "\n".join(f"- {item}" for item in items)
 
     return (
-        f"You are {card['name']}, a character in an ongoing roleplay. Stay in character at all "
-        f"times and reply only as {card['name']}, in their voice.\n\n"
+        f"## {card['name']}\n"
         f"Summary: {card['summary']}\n\n"
         f"Appearance:\n{bullets(card['physical'])}\n\n"
         f"Speech:\n{bullets(card['speech'])}\n\n"
         f"Personality:\n{bullets(card['personality'])}\n\n"
         f"Backstory: {card['backstory'].strip()}"
+    )
+
+
+def load_scenario(cfg, name):
+    """Scenario dict with its character cards loaded, in system-prompt order."""
+    scenario = load_yaml(f"{cfg['paths']['scenarios']}/{name}.yaml")
+    scenario["id"] = name
+    scenario["cards"] = {cid: load_yaml(f"{cfg['paths']['characters']}/{cid}.yaml")
+                         for cid in scenario["characters"]}
+    return scenario
+
+
+def render_scene(scenario):
+    """System prompt: roleplay instructions, the output format, and every character's profile."""
+    cards = list(scenario["cards"].values())
+    names = ", ".join(c["name"] for c in cards)
+    example = first_name(cards[0])
+    profiles = "\n\n".join(render_card(c) for c in cards)
+    return (
+        f"You are the narrator of an ongoing roleplay, and you voice these characters: {names}. "
+        f"The user plays their own character; never speak or act for the user's character.\n\n"
+        f"Setting: {scenario['setting'].strip()}\n\n"
+        f"Write each character's speech and actions on a separate line that starts with their "
+        f"first name and a colon, for example:\n"
+        f"{example}: *nods slowly* \"We leave at dawn.\"\n"
+        f"Narration that belongs to no character goes on its own line with no name. Keep every "
+        f"character true to their profile below and distinct from the others.\n\n"
+        f"{profiles}"
     )
 
 
@@ -124,6 +155,8 @@ def start_server(cfg, model_path, log_path):
     ]
     if s["n_gpu_layers"] is not None:
         cmd += ["-ngl", str(s["n_gpu_layers"])]
+    if s.get("cache_ram_mib") is not None:
+        cmd += ["--cache-ram", str(s["cache_ram_mib"])]
 
     log_path.parent.mkdir(parents=True, exist_ok=True)
     proc = subprocess.Popen(cmd, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
